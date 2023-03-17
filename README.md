@@ -1,8 +1,8 @@
-![](https://img.shields.io/badge/Sudoku-blue)
+![](https://img.shields.io/badge/MovieRecommend-blue)
 
-# SUDOKU GAME(With Auto-solve)
+# Movie Recommendation App
 
-> Sudoku Game is a logic-based, combinatorial number-placement puzzle. It is 9 * 9 Grid and the objective is to fill numbers from 0 to 9 in 3 * 3 sub-grids. In addition to this, there is an option to let the program solves sudoku itself. It uses Pygame, python library used for basic desktop games. The program runs in nodejs environment.
+> This is a web application that uses Machine Learning in order to recommend movies based on the movies you liked and the rating you gave it. It uses Flask and a Machine Learning algorithm.
 
 <br/>
 
@@ -14,11 +14,10 @@ Additional description about the project and its features.
 
 ## Built With
 
-- Major languages (JavaScript, Python)
+- Major languages (Python)
 - Technologies/tools used
 
   ```bash
-  - Nodejs
   - Python
   - Git(version control)
 
@@ -31,38 +30,37 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 - A text editor(preferably Visual Studio Code)
-- Nodejs
 - Python
 
 #### Libraries
-- pygame
+- pandas
+- flask
 - unittest
 
 ### Install
 
 - [Git](https://git-scm.com/downloads)
-- [Node](https://nodejs.org/en/download/)
 - [Python](https://python.org)
 
 #### Clone this repository
 
 ```bash
-$ git clone https://github.com/mugishasam123/Sudoku-solver-app
+$ git clone https://github.com/mugishasam123/Movie-recommender
 .git
-$ cd Sudoku-solver-app
+$ cd Movie-recommender
 ```
 
 #### Run project
 
 ```bash
-$ npm install
-$ npm run dev
+$ python app.py
+$ 
 ```
 
 #### Run Tests
 
 ```bash
-$ npm run test
+$ python -m unittest tests/test_modelTrain.py
 ```
 
 <br>
@@ -81,7 +79,7 @@ $ npm run test
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/mugishasam123/Sudoku-solver-app/issues).
+Feel free to check the [issues page](https://github.com/mugishasam123/Movie-recommender/issues).
 
 <br>
 
