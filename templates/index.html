@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Movie recommender app</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h2 class="heading">Movie Recommender App</h2>
+    <div class="container">
+      <form action="{{ url_for('recommend')}}" method="post" class="form">
+        <div class="form__control">
+          <label for="movie">Enter the movie you liked:</label>
+          <input
+            type="text"
+            name="movie"
+            placeholder="Title of the movie..."
+            required
+          />
+        </div>
+        <div class="form__control">
+          <label for="rating">Enter Rating for the above movie:</label>
+          <input
+            type="number"
+            name="rating"
+            placeholder="Enter the rating.."
+            required="required"
+          />
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+      {% if searched_movie%}
+      <div class="response__container">
+        {% if searched_movie%}
+        <h3 class="sub__heading">Recommended movies based on the search({{searched_movie}}):</h3>
+        {% endif%}
+        <!-- If there is error, It will be displayed -->
+        {% with messages = get_flashed_messages() %} {% if messages %}
+        <div class="alert alert-danger">
+          <ul class="list">
+            {% for message in messages %}
+            <li class="list__item error">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %} {% endwith %}
+        <!-- List of suggested movies here -->
+        <ol class="o_list">
+          {% for movie in recommended_movies %}
+          <li class="list__item">
+            {{ movie }}
+          </li>
+          {% endfor %}
+          
+        </ol>
+      </div>
+      {% endif%}
+    </div>
+  </body>
+</html>
